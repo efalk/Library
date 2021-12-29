@@ -11,6 +11,7 @@ Timer.java | Schedule and receive periodic alarms
 Utils.java | Small utilities
 WebHelper.java | HTTP utilities, based on apache.http
 MultiPartProducer.java | Post multipart/form-data; used with Apache HTTP
+aho-corasick.py | Aho-Corasick string matching algorithm
 
 ## WebHelper.java
 
@@ -19,6 +20,9 @@ in detail.
 
 For the most part, this class consists of convenience wrappers around
 the Apache HTTP library.
+
+Note: totally obsolete. Yours truly blew an Android interview because I
+relied on this class.
 
 ### Constructor
 
