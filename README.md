@@ -2,6 +2,9 @@
 
 For the most part, you want to copy these modules into your own source code.
 
+The Java modules were written with Android in mind, but you can easily remove
+the Android dependencies from Matrix3d and Utils
+
 Name | What it is
 ---- | ----
 Matrix3d.java | 3-d matrices, with an emphasis on 3d graphics
@@ -13,6 +16,23 @@ WebHelper.java | HTTP utilities, based on apache.http
 MultiPartProducer.java | Post multipart/form-data; used with Apache HTTP
 aho-corasick.py | Aho-Corasick string matching algorithm
 
+## Utils.java
+
+This static class contains a number of small useful utilities.
+
+Written for Android but you can replace the logging calls with
+something else.
+
+### Static Methods:
+
+Return | Method | Brief description
+----: | :---- | ----
+void | where(Throwable) | Dump stack given a Throwable
+String | where(Throwable, String methodName) | Return one specific entry from stack
+String | inputStreamAsString(InputStream s) | Read a string from an InputStream
+void | closeQuietly(Closeable) | Closes 'closeable', ignoring any checked exceptions
+boolean | sleep(int ms) | Sleep, return true if interrupted
+
 ## WebHelper.java
 
 This class contains enough functionality that it's worth describing
@@ -22,7 +42,8 @@ For the most part, this class consists of convenience wrappers around
 the Apache HTTP library.
 
 Note: totally obsolete. Yours truly blew an Android interview because I
-relied on this class.
+relied on this class. Might still be useful on systems that still support
+the Apache http stack, but honestly, just use java.net.
 
 ### Constructor
 
